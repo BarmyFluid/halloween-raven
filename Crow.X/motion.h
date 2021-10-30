@@ -8,6 +8,6 @@
 void motionBegin();
 void motionOpenMouth();
 void motionCloseMouth();
-void motionTurnHead(const unsigned long from, const unsigned long to);
+void motionTurnHead(unsigned long from, unsigned long to);
 
 #endif	/* MOTION_H */

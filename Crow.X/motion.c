@@ -101,7 +101,7 @@ void motionCloseMouth() {
     ATOMIC pulseWidthMouth = MouthClosed;
 }
 
-void motionTurnHead(const unsigned long from, const unsigned long to) {
+void motionTurnHead(unsigned long from, unsigned long to) {
     if (from > to) {
         for (uint16_t pw = from; pw >= to; pw -= usToTcy(10)) {
             __delay_ms(40);

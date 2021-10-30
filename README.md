@@ -2,7 +2,7 @@
 
 Halloween Raven is the C source code for firmware that can run on a [Microchip PIC16F1825](https://www.microchip.com/en-us/product/PIC16F1825) microcontroller. It drives two cheap SG90 servos, two ultra-voilet LEDs and a [DFPlayer Mini](https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299) MP3 audio player. I've uploaded it here as someone might find some of the techniques useful. Of particular interest is the handling of multiple servos in a round-robin style using an interrupt service routine that only needs a single timer. I can't take credit for the idea but I found it super useful as a concept. I think it could be applied to other problems where you have limited resources or don't want the complexity of setting up multiple timers.
 
-The completed project has the raven turning its head, blink a few times, squawk, wink and repeat forever. Nothing too fancy but could easily be extended to randomly look or be triggered by a sensor etc.
+The completed project has the raven turn its head, blink a few times, squawk, wink and repeat forever. Nothing too fancy but could easily be extended to randomly look or be triggered by a sensor etc.
 
 ## Hardware
 
@@ -12,7 +12,7 @@ I've not included a circuit diagram as it's just as simple as current limiting r
 
 On my board I did wire up the BUSY output pin of the DFPlayer to one of the PORTA inputs of the PIC but ended up not using that and simply just implemented a delay after playing the MP3. It does the job but I might consider using it if I were to play different MP3 files and just use the BUSY signal to know when it has finished playing. In its current form it does mean the firmware would need to be updated if the audio file was changed.
 
-Using a PIC microcontroller after spending years building things in the [Arduino](https://www.arduino.cc/) and [Expressif ESP-IDF](https://www.espressif.com/en/products/sdks/esp-idf) ecosystems brought many different emotions. At first frustration at going bare-metal and needing to look-up registers that needed configuring, then at not just going straight for assembly rather than C and then loving the simplicity and speed of programming a PIC. For simple tasks like this I think they are perfect expecially for battery operated systems.
+Using a PIC microcontroller after spending years building things in the [Arduino](https://www.arduino.cc/) and [Expressif ESP-IDF](https://www.espressif.com/en/products/sdks/esp-idf) ecosystems brought many different emotions. At first frustration at going bare-metal and needing to look-up registers that needed configuring, then at not just going straight for assembly rather than C and then loving the simplicity and speed of programming a PIC. For simple tasks like this I think they are perfect especially for battery operated systems. PIC microcontrollers were my first experience with embedded devices a couple of decades ago so it was nice to return.
 
 ## Building
 
